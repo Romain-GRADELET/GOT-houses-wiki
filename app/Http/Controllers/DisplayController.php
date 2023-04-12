@@ -9,15 +9,15 @@ class DisplayController extends Controller
 {
 
     // Méthode permettant de récupérer l'ensemble des personnages
-    public static function findAll()
+    public static function findHomepage()
     {
         return view('homepage', ['characters' => CharacterController::findAll()]);
     }
 
      // Méthode permettant de récupérer l'ensemble des personnages
-     public static function find()
+     public static function findCharacter($id)
      {
-        //return view('home', ['Characters' => CharacterController::find()]);
+        return view('biographie', ['characterData' => CharacterController::find($id)]);
      }
 
 }

@@ -43,7 +43,7 @@ Route::get('/test', function(){
  */
  Route::get('/', [
     DisplayController::class,
-    'findAll'
+    'findHomepage'
  ])->name('main.home');
 
 /*--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ Route::get('/test', function(){
  */
 Route::get('/character/{id}', [
     DisplayController::class,
-    'find'
+    'findCharacter'
  ])->whereNumber('id')->name('main.character');
 
 
