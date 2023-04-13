@@ -25,8 +25,9 @@ use Illuminate\Support\Facades\Route;
  * Chemin : http://localhost:8080/test
  */
 Route::get('/test', function(){
-    return "page de test front ";
+    return view ('welcome');
 });
+
 
 //==========================================================================
 // ROUTE => HOMEPAGE
@@ -60,16 +61,3 @@ Route::get('/character/{id}', [
     'findCharacter'
  ])->whereNumber('id')->name('main.character');
 
-
-
-
-
-
-
-
-
-
-
-// Route::get('/', function(){
-//     return view('homepage', ['characters' => CharacterController::findAll()]);
-// });

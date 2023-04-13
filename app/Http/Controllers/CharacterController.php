@@ -8,16 +8,17 @@ class CharacterController extends Controller
 {
 
     // Méthode permettant de récupérer l'ensemble des personnages
-    public static function findAll()
+    public static function list()
     {
-        return Character::all();
+        $characters = Character::all()->load(('houses'));
+        return $characters;
     }
 
-    // Méthode permettant de récupérer l'ensemble des personnages
-    public static function find($id)
+    // Méthode permettant de récupérer un seul personnage
+    public static function show($id)
     {
-        return Character::findOrFail($id);
+        $character = Character::findOrFail($id)->load('houses');
+        return $character;
     }
-
 
 }

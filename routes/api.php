@@ -31,12 +31,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
  * Méthode HTTP : GET
  * Chemin : http://localhost:8000/api/character
  * Controller : CharacterController
- * Méthode : findAll()
+ * Méthode : list()
  * Nom de la route : character-list
  */
 Route::get('/character', [
     CharacterController::class,
-    'findAll'
+    'list'
 ])->name('character-list');
 
 /**
@@ -46,10 +46,10 @@ Route::get('/character', [
  * Méthode HTTP : GET
  * Chemin : http://localhost:8000/api/character/{id}
  * Controller : CharacterController
- * Méthode : find()
- * Nom de la route : character-find
+ * Méthode : show()
+ * Nom de la route : character-show
  */
 Route::get('/character/{id}', [
     CharacterController::class,
-    'find'
-])->whereNumber('id')->name('character-list');
+    'show'
+])->whereNumber('id')->name('character-show');
