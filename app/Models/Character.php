@@ -14,16 +14,27 @@ class Character extends Model
      */
     public function houses()
     {
-        return $this->belongsToMany(Character::class, 'house_has_characters','character','house');
+        return $this->belongsToMany(House::class, 'house_has_characters','character','house');
     }
 
     /**
      * The character that belong to the title
      */
-    public function titles()
+    public function title()
     {
-        return $this->belongsTo(Character::class,'name','id_title');
+        return $this->belongsTo(Title::class,'id_title');
     }
 
+
+    public function mother()
+    {
+        return $this->belongsTo(Character::class);
+    }
+
+
+    public function father()
+    {
+        return $this->belongsTo(Character::class);
+    }
 
 }

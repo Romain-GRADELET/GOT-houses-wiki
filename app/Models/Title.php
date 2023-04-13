@@ -14,7 +14,7 @@ class Title extends Model
      */
     public function characters()
     {
-        return $this->hasMany(Title::class,'name','id_title');
+        return $this->hasMany(Character::class);
     }
 
 

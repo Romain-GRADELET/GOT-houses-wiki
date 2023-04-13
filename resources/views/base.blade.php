@@ -18,7 +18,7 @@
         <nav>
             <ul>
                 <li><a href="{{ route('main.home') }}">Personnages</a></li>
-      
+                <li><a href="{{ route('main.house') }}">Maisons</a></li>
             </ul>
         </nav>
         <div class="separator"></div>

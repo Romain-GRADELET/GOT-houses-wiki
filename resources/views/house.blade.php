@@ -5,11 +5,11 @@
 
                 @foreach( $houses as $house )
                 <li class="house-logo" style="background: #e3e3e3;">
-                    <a href="#/house/1">
+                    <a href="{{ route('main.house', ['id' =>  $house->id]) }}">
                         <img src="assets/img/houses/{{ $house->image }}" alt="Stark">
                     </a>
                 </li>
                 @endforeach
-                
+
             </ul>
 @endsection
