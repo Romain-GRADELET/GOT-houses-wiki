@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\HouseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 #region
 /**
  *--------------------------------------------------------------------------
- * Route permettant d'afficher la liste des taches
+ * Route permettant d'afficher la liste des personnages
  *--------------------------------------------------------------------------
  * Méthode HTTP : GET
  * Chemin : http://localhost:8000/api/character
@@ -41,7 +42,7 @@ Route::get('/character', [
 
 /**
  *--------------------------------------------------------------------------
- * Route permettant d'afficher la liste des taches
+ * Route permettant d'afficher un personnage
  *--------------------------------------------------------------------------
  * Méthode HTTP : GET
  * Chemin : http://localhost:8000/api/character/{id}
@@ -53,3 +54,37 @@ Route::get('/character/{id}', [
     CharacterController::class,
     'show'
 ])->whereNumber('id')->name('character-show');
+
+//==========================================================================
+// ROUTE => HOUSE
+//==========================================================================
+#region
+/**
+ *--------------------------------------------------------------------------
+ * Route permettant d'afficher la liste des maisons
+ *--------------------------------------------------------------------------
+ * Méthode HTTP : GET
+ * Chemin : http://localhost:8000/api/house
+ * Controller : HouseController
+ * Méthode : list()
+ * Nom de la route : house-list
+ */
+Route::get('/house', [
+    HouseController::class,
+    'list'
+])->name('house-list');
+
+/**
+ *--------------------------------------------------------------------------
+ * Route permettant d'afficher une maison
+ *--------------------------------------------------------------------------
+ * Méthode HTTP : GET
+ * Chemin : http://localhost:8000/api/house/{id}
+ * Controller : HouseController
+ * Méthode : show()
+ * Nom de la route : house-show
+ */
+Route::get('/house/{id}', [
+    HouseController::class,
+    'show'
+])->whereNumber('id')->name('house-show');

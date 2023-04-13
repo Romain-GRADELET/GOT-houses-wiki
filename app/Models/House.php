@@ -14,8 +14,9 @@ class House extends Model
      */
     public function characters()
     {
-        return $this->belongsToMany(House::class);
+        return $this->belongsToMany(House::class, 'house_has_characters','character', 'house');
     }
+
 
 
 }
