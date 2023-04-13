@@ -25,13 +25,17 @@ class Character extends Model
         return $this->belongsTo(Title::class,'id_title');
     }
 
-
+    /**
+     * Relation entre primary_key : id et foreign_key: mother_id
+     */
     public function mother()
     {
         return $this->belongsTo(Character::class);
     }
 
-
+    /**
+     * Relation entre primary_key : id et foreign_key: father_id
+     */
     public function father()
     {
         return $this->belongsTo(Character::class);

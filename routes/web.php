@@ -76,4 +76,4 @@ Route::get('/character/{id}', [
 Route::get('/house', [
     DisplayController::class,
     'housesList'
- ])->name('main.house');
+ ])->whereNumber('id')->name('main.house');
