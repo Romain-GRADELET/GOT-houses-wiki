@@ -29,7 +29,7 @@ class DisplayController extends Controller
     // Méthode permettant de récupérer l'ensemble des maison
     public static function housesDetail($id)
     {
-        return view('houseDetail', ['house' => HouseController::show($id)]);
+        return view('home', ['house' => HouseController::show($id)]);
     }
 
 }
