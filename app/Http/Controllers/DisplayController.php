@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\HouseController;
 
 class DisplayController extends Controller
 {
@@ -26,7 +27,7 @@ class DisplayController extends Controller
     }
 
     // Méthode permettant de récupérer l'ensemble des maison
-    public static function houseShow($id)
+    public static function housesDetail($id)
     {
         return view('houseDetail', ['house' => HouseController::show($id)]);
     }

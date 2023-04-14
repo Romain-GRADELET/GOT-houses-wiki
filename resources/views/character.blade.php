@@ -13,8 +13,13 @@
         </div>
     </div>
     <div class="col-4">
-        <div class="avatar" style="background: #e3e3e3;">
-            <img src="/assets/img/{{ $character->image }}" alt="Catelyn">
+
+    @foreach( $character->houses as $house )
+        <div class="avatar" style="background: #<?= $house->colour ?>;">
+    @break
+    @endforeach
+
+            <img src="/assets/img/{{ $character->image }}" alt="{{ $character->first_name }}">
         </div>
         <div class="infos">
             <h3>Maisons</h3>
@@ -22,14 +27,14 @@
                 <ul>
                     @foreach( $character->houses as $house )
 
-                    <li class="house-logo" style="background: #e3e3e3;">
-                        <a href="#/house/1">
-                            <img src="/assets/img/houses/{{ $house->image }}" alt="Stark">
+                    <li class="house-logo" style="background: #<?= $house->colour ?>;">
+
+                        <a href="{{ route('main.houseDetail', ['id' =>  $house->id]) }}">
+                            <img src="/assets/img/houses/{{ $house->image }}" alt="{{ $character->last_name }}">
                         </a>
 
                     </li>
                     @endforeach
-
 
                 </ul>
             </div>

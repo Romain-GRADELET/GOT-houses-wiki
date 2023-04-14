@@ -71,9 +71,23 @@ Route::get('/character/{id}', [
  * Chemin : http://localhost:8000/house
  * Controller : DisplayController
  * Méthode : ()
- * Nom de la route : main.character
+ * Nom de la route : main.house
  */
 Route::get('/house', [
     DisplayController::class,
     'housesList'
- ])->whereNumber('id')->name('main.house');
+ ])->name('main.house');
+
+ /*--------------------------------------------------------------------------
+ * Route permettant d'afficher une maison précise
+ *--------------------------------------------------------------------------
+ * Méthode HTTP : GET
+ * Chemin : http://localhost:8000/house/{id}
+ * Controller : DisplayController
+ * Méthode : ()
+ * Nom de la route : main.houseDetail
+ */
+Route::get('/house/{id}', [
+    DisplayController::class,
+    'housesDetail'
+ ])->whereNumber('id')->name('main.houseDetail');

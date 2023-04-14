@@ -4,8 +4,8 @@
             <ul class="houses-list">
 
                 @foreach( $houses as $house )
-                <li class="house-logo" style="background: #e3e3e3;">
-                    <a href="{{ route('main.house', ['id' =>  $house->id]) }}">
+                <li class="house-logo" style="background: #<?= $house->colour ?>;">
+                    <a href="{{ route('main.houseDetail', ['id' =>  $house->id]) }}">
                         <img src="assets/img/houses/{{ $house->image }}" alt="Stark">
                     </a>
                 </li>

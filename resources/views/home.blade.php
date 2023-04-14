@@ -6,8 +6,11 @@
                 <li class="character-card">
                     <a href="{{ route('main.character', ['id' =>  $character->id]) }}">
 
-                        <div class="avatar" style="background: #e3e3e3;">
-                            <img src="assets/img/{{ $character->image }}" alt="Arya">
+                    @foreach( $character->houses as $house )
+                        <div class="avatar" style="background: #<?= $house->colour ?>;">
+                    @break
+                    @endforeach
+                            <img src="assets/img/{{ $character->image }}" alt="{{ $character->first_name }}">
                         </div>
                         <div class="name">
                             {{ $character->first_name }} {{ $character->last_name }}
